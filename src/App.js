@@ -1,6 +1,7 @@
 /* https://www.accuweather.com/en/gb/liverpool/l7-9/february-weather/330510  */
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 import {weatherdata} from "./mockdata.js";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,18 +10,34 @@ import Weathercard from './components/Weathercard';
 import FilterRow from './components/FilterRow';
 
 function App() {
- ///// dropdown rendering list with map.() and .filter() manipulation as a prop
+ // dropdown rendering list with map.() and .filter() manipulation as a prop
 const DataFromDropdown = () => {
   return [
     ...new Set(weatherdata.map(item => item.region)),
   ] /*wrapp return in an array */
 }
 
+// filter city name
+ const handleChangeCity = (city) => {
+  const filterWeatherData = weatherdata.filter((item) => {
+    if (item.city.toLocaleLowerCase().includes(city.toLocaleLowerCase())){
+      return item 
+    }  return false
+  })
+  setTempData(filterWeatherData)
+ }
+ // region drop down 
+ const handleRegionDD = (region) => {
+  const filterWeatherData =  weatherdata.filter((item) => {
+    if (item.region === region) {
+      return item;
+    }
+   return false;
+  });
+  setTempData(filterWeatherData)
+};
 
-
-
-
-
+const [tempdata, setTempData] = useState(weatherdata);
 
 
   return (
@@ -31,12 +48,16 @@ const DataFromDropdown = () => {
           <Row>
            <FilterRow
            region={DataFromDropdown()}
+           onCityFilter={handleChangeCity}
+           onRegionFilter={handleRegionDD }
+          
            />
           </Row>
           <Row>
-            {weatherdata.map((item) => (
+            {tempdata.map((item) => (
                 <Weathercard item={item} key={item.id} />
             ))}  
+              
           </Row>
         </Col>
         <Col>

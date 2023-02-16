@@ -1,8 +1,34 @@
 import { useState } from "react";
 
-const FilterRow = ({region}) => {
-
+const FilterRow = ({region, onCityFilter, onRegionFilter}) => {
     console.log(region)
+
+
+    const [filters, setFilters] = useState({
+        city: "",
+        region: "",
+      });
+
+    const handleChange = (field) => (event) => {
+        const {value} = event.target;
+        setFilters({
+            ...filters,
+            [field]: value,
+        })
+
+    switch(field){
+        case "city":
+            onCityFilter(value);
+            break;
+        case "region":
+            onRegionFilter(value);
+            break;
+    }
+    };
+      
+    
+
+   
     return(
         <div className="row mt-2 mb-2 ">
             <div className="col-lg-12 border">
@@ -17,6 +43,9 @@ const FilterRow = ({region}) => {
                     type="text"
                     id="cityname"
                     className="city-form-control"
+                    value={filters.city}
+                    onChange={handleChange("city")}
+                   
                     />
                 </div>
                 <div className="col-md-6 ">
@@ -26,6 +55,7 @@ const FilterRow = ({region}) => {
                     <select
                     className="region-form-control"
                     id="region-filter"
+                    onChange={handleChange("region")}
                     >
                         <option value="select">Select Region</option>
                         {region.map((region) => (
