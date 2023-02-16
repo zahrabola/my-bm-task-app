@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const FilterRow = ({region}) => {
 
     console.log(region)
@@ -8,12 +10,21 @@ const FilterRow = ({region}) => {
             </div>
             <div className="row">
                 <div className="col-md-6 ">
-                    City
+                    <div className="row">
+                    <label htmlFor="city"> City </label> 
+                    </div>
+                    <input
+                    type="text"
+                    id="cityname"
+                    className="city-form-control"
+                    />
                 </div>
                 <div className="col-md-6 ">
-                    <label htmlFor="region">Regions</label>
+                    <div className="row">
+                    <label htmlFor="region"> Regions </label>
+                    </div>
                     <select
-                    className="form-control"
+                    className="region-form-control"
                     id="region-filter"
                     >
                         <option value="select">Select Region</option>
@@ -25,12 +36,21 @@ const FilterRow = ({region}) => {
                         </select>                  
                 </div>
                 <div className="row">
-                <div className="col-md-4">
-                    Checkboxes
+                  <label htmlFor="checkbox"> Temperature </label>
+                    <div className="checkbox">
+                        <label>
+                            <input type="checkbox" value="checkbox2" />
+                           <span> Less than 10°C </span> 
+                        </label>
+                    </div>
+                    <div className="checkbox">
+                        <label>
+                            <input type="checkbox" value="checkbox2" />
+                            <span> 10°C or more </span> 
+                        </label>
+                    </div>
+              
                 </div>
-                </div>
-               
-          
             </div>
         </div>
     )
