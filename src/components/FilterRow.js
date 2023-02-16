@@ -1,14 +1,13 @@
 import { useState } from "react";
 
-const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter}) => {
+const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter, category}) => {
     console.log(region)
-    
+    console.log(category)
 
 
     const [filters, setFilters] = useState({
         city: "",
-        region: "",
-     
+        region: "", 
       });
 
     const handleChange = (field) => (event) => {
@@ -24,12 +23,13 @@ const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter}) => 
             break;
         case "region":
             onRegionFilter(value);
-            break; 
-
+            break;         
     }
     };
-      
     
+    
+    //checkbox
+
 
    
     return(
@@ -72,20 +72,34 @@ const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter}) => 
                 <div className="row">
                   <label htmlFor="checkbox"> Temperature </label>
                     <div className="checkbox">
+                        {/*  {category.map((category, id) => (
+                              <label key={category.id}>
+                              <input type="checkbox" value={filters.category} 
+                               onChange={handleChange("category")} />
+                             <span> {category} </span> 
+                          </label>
 
-                        
-                        <label>
+                        ))}*/}
+                       
+                        {/* <label>
                             <input type="checkbox" value={filters.category}  onChange={handleChange("category")} />
                            <span> Less than 10°C </span> 
-                        </label>
+                        </label>*/}
+ 
                     </div>
                     <div className="checkbox">
                         <label>
-                            <input type="checkbox" value="checkbox2" />
+                            <input type="checkbox" />
                             <span> 10°C or more </span> 
                         </label>
-                    </div>
-              
+                    </div> 
+                  
+                    <div className="checkbox">
+                        <label>
+                            <input type="checkbox" />
+                            <span> 9°C or less </span> 
+                        </label>
+                    </div> 
                 </div>
             </div>
         </div>

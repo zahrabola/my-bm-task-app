@@ -1,7 +1,7 @@
 /* https://www.accuweather.com/en/gb/liverpool/l7-9/february-weather/330510  */
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import {weatherdata} from "./mockdata.js";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -16,11 +16,7 @@ const DataFromDropdown = () => {
     ...new Set(weatherdata.map(item => item.region)),
   ] /*wrapp return in an array */
 }
-const DataFromCheckbox = () => {
-  return [
-    ...new Set(weatherdata.map(item => item.category)),
-  ] /*wrapp return in an array */
-}
+
 
 // filter city name
  const handleChangeCity = (city) => {
@@ -43,17 +39,18 @@ const DataFromCheckbox = () => {
 };
 
 // checkbox 
-/*const handleFilterChange = (category) => {
+/* 
+const handleFilterChange = (category) => {
   const filterWeatherData =  weatherdata.filter((item) => {
-    if (item.category === category) {
-      return item;
+    if (category === "Less than 10°C") {
+     console.log(item.category,"")
     }
    return false;
   })
   setTempData(filterWeatherData)
-} */
+} 
 
-
+*/
 
 
 const [tempdata, setTempData] = useState(weatherdata);
@@ -67,12 +64,12 @@ const [tempdata, setTempData] = useState(weatherdata);
           <Row>
            <FilterRow
            region={DataFromDropdown()}
-           category={DataFromCheckbox()}
+          /*  category={DataFromCheckbox()} */
            onCityFilter={handleChangeCity}
            onRegionFilter={handleRegionDD }
-          onCheckboxFilter={handleFilterChange} 
-          
+          /*onCheckboxFilter={handleFilterChange}  */
            />
+                 
           </Row>
           <Row>
             {tempdata.map((item) => (
