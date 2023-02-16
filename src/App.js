@@ -6,24 +6,37 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Weathercard from './components/Weathercard';
+import FilterRow from './components/FilterRow';
 
 function App() {
+ ///// dropdown rendering list with map.() and .filter() manipulation as a prop
+const DataFromDropdown = () => {
+  return [
+    ...new Set(weatherdata.map(item => item.region)),
+  ] /*wrapp return in an array */
+}
+
+
+
+
+
+
+
+
   return (
     <div className="App">
      <Container>
       <Row>
         <Col sm={8}>
           <Row>
-           filter
-
+           <FilterRow
+           region={DataFromDropdown()}
+           />
           </Row>
           <Row>
             {weatherdata.map((item) => (
                 <Weathercard item={item} key={item.id} />
-
-            ))}
-          
-           
+            ))}  
           </Row>
         </Col>
         <Col>
