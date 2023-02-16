@@ -1,5 +1,6 @@
-{
-"weatherdata":
+/*{
+"weatherdata":*/
+export const weatherdata = 
 [ 
     {
       "id": 1,
@@ -61,7 +62,7 @@
         "id": 8,
         "city": "York",
         "Temp2": "10°C",
-        "region": "Yorkshire and the Humber, England",
+        "region": "Yorkshire ",
         "description": "Overcast",
         "date": "4.2.2023"
       },
@@ -83,6 +84,3 @@
       }
   ]
 
-  
-
-}

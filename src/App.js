@@ -1,7 +1,7 @@
 /* https://www.accuweather.com/en/gb/liverpool/l7-9/february-weather/330510  */
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import {weatherdata} from "./mockdata.json";
+import {weatherdata} from "./mockdata.js";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,8 +13,18 @@ function App() {
      <Container>
       <Row>
         <Col sm={8}>
-        checkbox filterside
-        <Weathercard />
+          <Row>
+           filter
+
+          </Row>
+          <Row>
+            {weatherdata.map((item) => (
+                <Weathercard item={item} key={item.id} />
+
+            ))}
+          
+           
+          </Row>
         </Col>
         <Col>
         email side
