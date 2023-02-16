@@ -1,12 +1,14 @@
 import { useState } from "react";
 
-const FilterRow = ({region, onCityFilter, onRegionFilter}) => {
+const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter}) => {
     console.log(region)
+    
 
 
     const [filters, setFilters] = useState({
         city: "",
         region: "",
+     
       });
 
     const handleChange = (field) => (event) => {
@@ -22,7 +24,8 @@ const FilterRow = ({region, onCityFilter, onRegionFilter}) => {
             break;
         case "region":
             onRegionFilter(value);
-            break;
+            break; 
+
     }
     };
       
@@ -56,6 +59,7 @@ const FilterRow = ({region, onCityFilter, onRegionFilter}) => {
                     className="region-form-control"
                     id="region-filter"
                     onChange={handleChange("region")}
+                    value={filters.region}
                     >
                         <option value="select">Select Region</option>
                         {region.map((region) => (
@@ -68,8 +72,10 @@ const FilterRow = ({region, onCityFilter, onRegionFilter}) => {
                 <div className="row">
                   <label htmlFor="checkbox"> Temperature </label>
                     <div className="checkbox">
+
+                        
                         <label>
-                            <input type="checkbox" value="checkbox2" />
+                            <input type="checkbox" value={filters.category}  onChange={handleChange("category")} />
                            <span> Less than 10°C </span> 
                         </label>
                     </div>

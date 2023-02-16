@@ -8,7 +8,7 @@ export const weatherdata =
       "Temp1": "8°C",
       "region": "South West, England",
       "description": "Mist",
-      "category":"less than",
+      "category":"Less than 10°C",
       "date": "4.2.2023"
     },
     {
@@ -17,7 +17,7 @@ export const weatherdata =
         "Temp1": "9°C",
         "region": "West Midlands, England",
         "description": "Overcast",
-        "category":"less than",
+        "category":"Less than 10°C",
         "date": "4.2.2023"
       },
       {
@@ -26,7 +26,7 @@ export const weatherdata =
         "Temp1": "9°C",
         "region": "Scotland",
         "description": "Patchy rain possible",
-        "category":"less than",
+        "category":"Less than 10°C",
         "date": "4.2.2023"
       },
       {
@@ -35,7 +35,7 @@ export const weatherdata =
         "Temp1": "9°C",
         "region": "London, England",
         "description": "Overcast",
-        "category":"less than",
+        "category":"Less than 10°C",
         "date": "4.2.2023"
       },
       {
@@ -44,7 +44,7 @@ export const weatherdata =
         "Temp2": "10°C",
         "region": "North West, England",
         "description": "Overcast",
-        "category":"more than",
+        "category":"10°C or more",
         "date": "4.2.2023"
       },
       {
@@ -53,7 +53,7 @@ export const weatherdata =
         "Temp1": "9°C",
         "region": "South West, England",
         "description": "Overcast",
-        "category":"less than",
+        "category":"Less than 10°C",
         "date": "4.2.2023"
       },
       {
@@ -62,7 +62,7 @@ export const weatherdata =
         "Temp1": "9°C",
         "region": "Wales",
         "description": "Light drizzle",
-        "category":"less than",
+        "category":"Less than 10°C",
         "date": "4.2.2023"
       },
       {
@@ -71,7 +71,7 @@ export const weatherdata =
         "Temp2": "10°C",
         "region": "Yorkshire ",
         "description": "Overcast",
-        "category":"more than",
+        "category":"10°C or more",
         "date": "4.2.2023"
       },
       {
@@ -80,7 +80,7 @@ export const weatherdata =
         "Temp2": "10°C",
         "region": "North West, England",
         "description": "Light drizzle",
-        "category":"more than",
+        "category":"10°C or more",
         "date": "4.2.2023"
       },
       {
@@ -89,7 +89,7 @@ export const weatherdata =
         "Temp1": "8°C",
         "region": "Scotland",
         "description": "Patchy rain possible",
-        "category":"less than",
+        "category":"Less than 10°C",
         "date": "4.2.2023"
       }
   ]
