@@ -5,92 +5,92 @@ export const weatherdata =
     {
       "id": 1,
       "city": "Bath",
-      "Temp1": "8°C",
+      "Temp": "13°C",
       "region": "South West, England",
-      "description": "Mist",
-      "category":"Less than 10°C",
-      "date": "4.2.2023"
+      "description": "Light Rain",
+      "category":"10°C or more",
+      "date": "18.2.2023"
     },
     {
         "id": 2,
         "city": "Coventry",
-        "Temp1": "9°C",
+        "Temp": "13°C",
         "region": "West Midlands, England",
-        "description": "Overcast",
-        "category":"Less than 10°C",
-        "date": "4.2.2023"
+        "description": "Drizzle",
+        "category":"10°C or more",
+        "date": "18.2.2023"
       },
       {
         "id": 3,
         "city": "Edinburgh",
-        "Temp1": "9°C",
+        "Temp": "7°C",
         "region": "Scotland",
-        "description": "Patchy rain possible",
+        "description": "Light Rain showers",
         "category":"Less than 10°C",
-        "date": "4.2.2023"
+        "date": "18.2.2023"
       },
       {
         "id": 4,
         "city": "City of London",
-        "Temp1": "9°C",
+        "Temp": "15°C",
         "region": "London, England",
-        "description": "Overcast",
-        "category":"Less than 10°C",
-        "date": "4.2.2023"
+        "description": "Light Cloud",
+        "category":"10°C or more",
+        "date": "18.2.2023"
       },
       {
         "id": 5,
         "city": "Manchester",
-        "Temp2": "10°C",
+        "Temp": "12°C",
         "region": "North West, England",
-        "description": "Overcast",
+        "description": "Light Rain",
         "category":"10°C or more",
-        "date": "4.2.2023"
+        "date": "18.2.2023"
       },
       {
         "id": 6,
         "city": "Plymouth",
-        "Temp1": "9°C",
+        "Temp": "13°C",
         "region": "South West, England",
-        "description": "Overcast",
-        "category":"Less than 10°C",
+        "description": "Drizzle",
+        "category":"10°C or more",
         "date": "4.2.2023"
       },
       {
         "id": 7,
         "city": " Swansea",
-        "Temp1": "9°C",
+        "Temp": "12°C",
         "region": "Wales",
-        "description": "Light drizzle",
-        "category":"Less than 10°C",
-        "date": "4.2.2023"
+        "description": "Light rain",
+        "category":"10°C or more",
+        "date": "18.2.2023"
       },
       {
         "id": 8,
         "city": "York",
-        "Temp2": "10°C",
+        "Temp": "11°C",
         "region": "Yorkshire ",
-        "description": "Overcast",
+        "description": "Light rain",
         "category":"10°C or more",
-        "date": "4.2.2023"
+        "date": "18.2.2023"
       },
       {
         "id": 9,
         "city": "Liverpool",
-        "Temp2": "10°C",
+        "Temp": "12°C",
         "region": "North West, England",
         "description": "Light drizzle",
         "category":"10°C or more",
-        "date": "4.2.2023"
+        "date": "18.2.2023"
       },
       {
         "id": 10,
         "city": "Aberdeen",
-        "Temp1": "8°C",
+        "Temp": "8°C",
         "region": "Scotland",
-        "description": "Patchy rain possible",
+        "description": "Patchy rain ",
         "category":"Less than 10°C",
-        "date": "4.2.2023"
+        "date": "18.2.2023"
       }
   ]
 

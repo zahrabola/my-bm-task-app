@@ -1,7 +1,7 @@
 /* https://www.accuweather.com/en/gb/liverpool/l7-9/february-weather/330510  */
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import {weatherdata} from "./mockdata.js";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -16,8 +16,6 @@ const DataFromDropdown = () => {
     ...new Set(weatherdata.map(item => item.region)),
   ] /*wrapp return in an array */
 }
-
-
 // filter city name
  const handleChangeCity = (city) => {
   const filterWeatherData = weatherdata.filter((item) => {

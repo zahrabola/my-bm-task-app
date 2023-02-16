@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter, category}) => {
+const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
     console.log(region)
-    console.log(category)
+ 
 
 
     const [filters, setFilters] = useState({
@@ -15,7 +15,7 @@ const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter, cate
         setFilters({
             ...filters,
             [field]: value,
-        })
+        });
 
     switch(field){
         case "city":
@@ -23,13 +23,26 @@ const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter, cate
             break;
         case "region":
             onRegionFilter(value);
-            break;         
-    }
+            break;   
+            default:
+                ///////
+
+      }
     };
     
     
     //checkbox
+    const [msg, setMsg] = useState("");
+    const checkbox = useRef();
+   
 
+    const handleClick = () => {
+        if (checkbox.current.checked) {
+            setMsg('Manchester, York and Liverpool are all at least 10°C, but unfortunately not sunny.');
+        } else {
+            setMsg();
+        }
+      }
 
    
     return(
@@ -72,34 +85,13 @@ const FilterRow = ({region, onCityFilter, onRegionFilter, onCheckboxFilter, cate
                 <div className="row">
                   <label htmlFor="checkbox"> Temperature </label>
                     <div className="checkbox">
-                        {/*  {category.map((category, id) => (
-                              <label key={category.id}>
-                              <input type="checkbox" value={filters.category} 
-                               onChange={handleChange("category")} />
-                             <span> {category} </span> 
-                          </label>
-
-                        ))}*/}
-                       
-                        {/* <label>
-                            <input type="checkbox" value={filters.category}  onChange={handleChange("category")} />
-                           <span> Less than 10°C </span> 
-                        </label>*/}
- 
-                    </div>
-                    <div className="checkbox">
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" ref={checkbox} name="more" onClick={handleClick}/>
                             <span> 10°C or more </span> 
+                            <p>  {msg} </p>
                         </label>
                     </div> 
-                  
-                    <div className="checkbox">
-                        <label>
-                            <input type="checkbox" />
-                            <span> 9°C or less </span> 
-                        </label>
-                    </div> 
+                   
                 </div>
             </div>
         </div>
