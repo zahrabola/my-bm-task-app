@@ -7,7 +7,7 @@ return(
             <h5 className="card-title">
                 City: {item.city}
             </h5>
-            <h6 className="temperature">{item.Temp1} {item.Temp2} </h6>
+            <h6 className="temperature">{item.temp}  </h6>
             <p className="text">Region: {item.region} </p>
             <p className="text">Description: {item.description} </p>
             <p className="text">Date: {item.date}</p>

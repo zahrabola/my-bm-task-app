@@ -16,6 +16,11 @@ const DataFromDropdown = () => {
     ...new Set(weatherdata.map(item => item.region)),
   ] /*wrapp return in an array */
 }
+const DataFromDropdowntemp = () => {
+  return [
+    ...new Set(weatherdata.map(item => item.category)),
+  ] 
+}
 // filter city name
  const handleChangeCity = (city) => {
   const filterWeatherData = weatherdata.filter((item) => {
@@ -35,9 +40,22 @@ const DataFromDropdown = () => {
   });
   setTempData(filterWeatherData)
 };
+// temperature  drop down
+const handleTempDD = (category) => {
+  const filterWeatherData =  weatherdata.filter((item) => {
+    if (item.category === category) {
+      return item;
+    }
+   return false;
+  });
+  setTempData(filterWeatherData)
+};
 
 // checkbox 
 /* 
+
+
+
 const handleFilterChange = (category) => {
   const filterWeatherData =  weatherdata.filter((item) => {
     if (category === "Less than 10°C") {
@@ -51,6 +69,8 @@ const handleFilterChange = (category) => {
 */
 
 
+
+
 const [tempdata, setTempData] = useState(weatherdata);
 
 
@@ -62,9 +82,11 @@ const [tempdata, setTempData] = useState(weatherdata);
           <Row>
            <FilterRow
            region={DataFromDropdown()}
-          /*  category={DataFromCheckbox()} */
+           category={DataFromDropdowntemp()}
            onCityFilter={handleChangeCity}
            onRegionFilter={handleRegionDD }
+           onTempFilter={handleTempDD}
+           
           /*onCheckboxFilter={handleFilterChange}  */
            />
                  

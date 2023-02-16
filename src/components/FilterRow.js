@@ -1,13 +1,15 @@
 import { useState, useRef } from "react";
 
-const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
-    console.log(region)
+const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter}) => {
+    //console.log(region)
+    console.log(category)
  
-
 
     const [filters, setFilters] = useState({
         city: "",
-        region: "", 
+        region: "",
+        category: "",
+
       });
 
     const handleChange = (field) => (event) => {
@@ -21,16 +23,19 @@ const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
         case "city":
             onCityFilter(value);
             break;
+        case "category":
+                onTempFilter(value);
+                break;
         case "region":
             onRegionFilter(value);
             break;   
             default:
                 ///////
-
       }
     };
     
-    
+
+
     //checkbox
     const [msg, setMsg] = useState("");
     const checkbox = useRef();
@@ -38,7 +43,7 @@ const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
 
     const handleClick = () => {
         if (checkbox.current.checked) {
-            setMsg('Manchester, York and Liverpool are all at least 10°C, but unfortunately not sunny.');
+            setMsg('Eight cities are all at least 10°C, unfortunately none are sunny.');
         } else {
             setMsg();
         }
@@ -47,11 +52,11 @@ const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
    
     return(
         <div className="row mt-2 mb-2 ">
-            <div className="col-lg-12 border">
+            <div className="col-lg-12 ">
                 <h4 className="filtertitle">Filter</h4>
             </div>
             <div className="row">
-                <div className="col-md-6 ">
+                <div className="col ">
                     <div className="row">
                     <label htmlFor="city"> City </label> 
                     </div>
@@ -64,6 +69,26 @@ const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
                    
                     />
                 </div>
+            </div>
+            <div className="row">
+             <div className="col-md-6 ">
+             <div className="row">
+                    <label htmlFor="category"> Temperature </label>
+                    </div>
+                    <select
+                    className="category-form-control"
+                    id="category-filter"
+                    onChange={handleChange("category")}
+                    value={filters.category}
+                    >
+                        <option value={category}>Select °C</option>
+                        {category.map((category) => (
+                              <option value={category} key={category}>
+                                {category}
+                              </option>
+                        ))}
+                        </select>                 
+                </div>
                 <div className="col-md-6 ">
                     <div className="row">
                     <label htmlFor="region"> Regions </label>
@@ -74,7 +99,7 @@ const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
                     onChange={handleChange("region")}
                     value={filters.region}
                     >
-                        <option value="select">Select Region</option>
+                          <option value="">Select Region</option>
                         {region.map((region) => (
                               <option value={region} key={region}>
                                 {region}
@@ -83,11 +108,9 @@ const FilterRow = ({region, onCityFilter, onRegionFilter,}) => {
                         </select>                  
                 </div>
                 <div className="row">
-                  <label htmlFor="checkbox"> Temperature </label>
                     <div className="checkbox">
-                        <label>
+                        <label htmlFor="checkbox"> 18th of Feb weather <span>data checkbox</span> <br/>
                             <input type="checkbox" ref={checkbox} name="more" onClick={handleClick}/>
-                            <span> 10°C or more </span> 
                             <p>  {msg} </p>
                         </label>
                     </div> 
