@@ -53,7 +53,7 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
     return(
         <div className="row mt-2 mb-2 ">
             <div className="col-lg-12 ">
-                <h4 className="filtertitle">Filter</h4>
+                <h4 className="filtertitle">Weather Filter</h4>
             </div>
             <div className="row">
                 <div className="col ">

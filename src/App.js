@@ -61,7 +61,7 @@ const [tempdata, setTempData] = useState(weatherdata);
     <div className="App">
      <Container>
       <Row>
-        <Col sm={8}>
+        <Col  md={{ span: 6, offset: 3 }} >
           <Row>
            <FilterRow
            region={DataFromDropdown()}
@@ -69,23 +69,18 @@ const [tempdata, setTempData] = useState(weatherdata);
            onCityFilter={handleChangeCity}
            onRegionFilter={handleRegionDD }
            onTempFilter={handleTempDD}
-           
-         
            />
-                 
-          </Row>
-          <Row>
+          </Row> 
+        </Col>
+        <Row>
             {tempdata.map((item) => (
                 <Weathercard item={item} key={item.id} />
-            ))}  
-              
+            ))}              
           </Row>
-        </Col>
-        <Col>
-        <Formemail />
-     
-        </Col>
       </Row>
+      <Col  md={{ span: 6, offset: 3 }}>
+        <Formemail />
+        </Col>
      </Container>
     </div>
   );
