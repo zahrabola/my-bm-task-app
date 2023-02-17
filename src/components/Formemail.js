@@ -14,7 +14,7 @@ const Formemail = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(' service_vm64qvj ', 'template_l9uwq4e', form.current, 'yYsGDmsWg3mBTFNo4')
+    emailjs.sendForm('service_vm64qvj', 'template_l9uwq4e', form.current, 'yYsGDmsWg3mBTFNo4')
       .then((result) => {
           console.log("email sent successfully",result.text);
       }, (error) => {
@@ -39,7 +39,7 @@ const Formemail = () => {
                       className="form-control"
                       id="fullname"
                       placeholder="Full Name"
-                      name="user_name"
+                      name='user_name' 
                       />
                 </div>
                 <div className="form-group">
@@ -47,7 +47,7 @@ const Formemail = () => {
                    <input
                      type="email"
                      className="form-control" 
-                     name="user_email"
+                     name='user_email'
                      id="emailform" 
                      placeholder="Email"
                      required
@@ -65,7 +65,7 @@ const Formemail = () => {
                       />
                 </div>
                <div className="form-group">
-                <label>Textarea</label>
+                <label>Description :</label>
                  <textarea 
                   className="form-control"
                   name="message"
