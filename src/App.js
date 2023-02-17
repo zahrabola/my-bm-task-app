@@ -8,6 +8,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Weathercard from './components/Weathercard';
 import FilterRow from './components/FilterRow';
+import Formemail from './components/Formemail';
+
 
 function App() {
  // dropdown rendering list with map.() and .filter() manipulation as a prop
@@ -51,25 +53,6 @@ const handleTempDD = (category) => {
   setTempData(filterWeatherData)
 };
 
-// checkbox 
-/* 
-
-
-
-const handleFilterChange = (category) => {
-  const filterWeatherData =  weatherdata.filter((item) => {
-    if (category === "Less than 10°C") {
-     console.log(item.category,"")
-    }
-   return false;
-  })
-  setTempData(filterWeatherData)
-} 
-
-*/
-
-
-
 
 const [tempdata, setTempData] = useState(weatherdata);
 
@@ -87,7 +70,7 @@ const [tempdata, setTempData] = useState(weatherdata);
            onRegionFilter={handleRegionDD }
            onTempFilter={handleTempDD}
            
-          /*onCheckboxFilter={handleFilterChange}  */
+         
            />
                  
           </Row>
@@ -99,7 +82,8 @@ const [tempdata, setTempData] = useState(weatherdata);
           </Row>
         </Col>
         <Col>
-        email side
+        <Formemail />
+     
         </Col>
       </Row>
      </Container>

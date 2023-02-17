@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 
 const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter}) => {
     //console.log(region)
-    console.log(category)
+    //console.log(category)
  
 
     const [filters, setFilters] = useState({
@@ -58,12 +58,12 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
             <div className="row">
                 <div className="col ">
                     <div className="row">
-                    <label htmlFor="city"> City </label> 
+                    <label htmlFor="city"> City Name </label> 
                     </div>
                     <input
                     type="text"
                     id="cityname"
-                    className="city-form-control"
+                    className="form-control city-form"
                     value={filters.city}
                     onChange={handleChange("city")}
                    
@@ -76,7 +76,7 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
                     <label htmlFor="category"> Temperature </label>
                     </div>
                     <select
-                    className="category-form-control"
+                    className="form-control category-form"
                     id="category-filter"
                     onChange={handleChange("category")}
                     value={filters.category}
@@ -94,7 +94,7 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
                     <label htmlFor="region"> Regions </label>
                     </div>
                     <select
-                    className="region-form-control"
+                    className="region-form form-control"
                     id="region-filter"
                     onChange={handleChange("region")}
                     value={filters.region}

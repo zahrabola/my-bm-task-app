@@ -54,7 +54,7 @@ export const weatherdata =
         "region": "South West, England",
         "description": "Drizzle",
         "category":"10°C or more",
-        "date": "4.2.2023"
+        "date": "18.2.2023"
       },
       {
         "id": 7,
