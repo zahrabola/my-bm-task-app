@@ -5,15 +5,18 @@ yYsGDmsWg3mBTFNo4 - YOUR_PUBLIC_KEY
 */
 
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Formemail = () => {
-    const form = useRef()
+  const [submitted, setSubmitted] = useState(false)
+
+
+  const form = useRef()
     
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setSubmitted(true)
     emailjs.sendForm('service_vm64qvj', 'template_l9uwq4e', form.current, 'yYsGDmsWg3mBTFNo4')
       .then((result) => {
           console.log("email sent successfully",result.text);
@@ -40,6 +43,7 @@ const Formemail = () => {
                       id="fullname"
                       placeholder="Full Name"
                       name='user_name' 
+                      required
                       />
                 </div>
                 <div className="form-group">
@@ -81,6 +85,10 @@ const Formemail = () => {
                  </button>
                 </div>
             </form>
+            {
+              submitted ? <h5 id='submitted'> email sent successfull  </h5> : null
+            }
+   
           </div>
         </section>
     )

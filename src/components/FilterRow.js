@@ -112,7 +112,7 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
                     <div className="checkbox">
                         <label htmlFor="checkbox"> 18th of Feb weather <span>data checkbox</span> <br/>
                             <input type="checkbox" value="checkbox1"ref={checkbox} name="moreinfo"  onClick={handleClick}/>
-                            <p  id="check-submitted">  {msg} </p>
+                            <p id="check-submitted">  {msg} </p>
                         </label>
                     </div> 
                    
