@@ -33,10 +33,47 @@ describe('Dev task - DropDown and input filter test', () => {
        cy.get("#region-filter").blur()
     })
 
-    it('verify weather search', () => {
+    it('verify weather search filter - Bath', () => {
         cy.get("[data-cy='cityname']").type("Bath").click()
-
+        cy.get("[data-cy='cityweather']").contains("Bath")
     })
+    it.skip('verify weather search filter - Coventry', () => {
+       cy.get("[data-cy='cityname']").type("Coventry").click()
+       cy.get("[data-cy='cityweather']").contains("Coventry")
+    })
+    it.skip('verify weather search filter - Edinburgh', () => {
+        cy.get("[data-cy='cityname']").type("Edinburgh").click()
+        cy.get("[data-cy='cityweather']").contains("Edinburgh")
+     })
+     it.skip('verify weather search filter - London', () => {
+        cy.get("[data-cy='cityname']").type("City of London").click()
+        cy.get("[data-cy='cityweather']").contains("City of London")
+     })
+     it.skip('verify weather search filter - Manchester', () => {
+        cy.get("[data-cy='cityname']").type("Manchester").click()
+        cy.get("[data-cy='cityweather']").contains("Manchester")
+     })
+     it.skip('verify weather search filter - Plymouth', () => {
+        cy.get("[data-cy='cityname']").type("Plymouth").click()
+        cy.get("[data-cy='cityweather']").contains("Plymouth")
+     })
+     it.skip('verify weather search filter - Swansea', () => {
+        cy.get("[data-cy='cityname']").type("Swansea").click()
+        cy.get("[data-cy='cityweather']").contains("Swansea")
+     })
+     it.skip('verify weather search filter - York', () => {
+        cy.get("[data-cy='cityname']").type("York").click()
+        cy.get("[data-cy='cityweather']").contains("York")
+     })
+     it.skip('verify weather search filter - Liverpool', () => {
+        cy.get("[data-cy='cityname']").type("Liverpool").click()
+        cy.get("[data-cy='cityweather']").contains("Liverpool")
+     })
+     it.skip('verify weather search filter - Aberdeen', () => {
+        cy.get("[data-cy='cityname']").type("Aberdeen").click()
+        cy.get("[data-cy='cityweather']").contains("Aberdeen")
+     })
+
 })
 
 ////*cy.get('select')
@@ -47,3 +84,4 @@ describe('Dev task - DropDown and input filter test', () => {
  
  ///['South West, England', 'West Midlands, England','Scotland','London, England','North West, England','Wales','Yorkshire']
  //"South West, England","West Midlands, England","Scotland", "'London, England", "North West, England", "Wales","Yorkshire"
+
