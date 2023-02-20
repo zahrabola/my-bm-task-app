@@ -72,7 +72,7 @@ const [tempdata, setTempData] = useState(weatherdata);
            />
           </Row> 
         </Col>
-        <Row>
+        <Row  data-cy="cityweather">
             {tempdata.map((item) => (
                 <Weathercard item={item} key={item.id} />
             ))}              

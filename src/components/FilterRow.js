@@ -63,6 +63,7 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
                     <input
                     type="text"
                     id="cityname"
+                    data-cy="cityname"
                     className="form-control city-form"
                     value={filters.city}
                     onChange={handleChange("city")}
@@ -110,8 +111,8 @@ const FilterRow = ({region, category, onCityFilter, onRegionFilter, onTempFilter
                 <div className="row">
                     <div className="checkbox">
                         <label htmlFor="checkbox"> 18th of Feb weather <span>data checkbox</span> <br/>
-                            <input type="checkbox" ref={checkbox} name="more" onClick={handleClick}/>
-                            <p>  {msg} </p>
+                            <input type="checkbox" value="checkbox1"ref={checkbox} name="moreinfo"  onClick={handleClick}/>
+                            <p  id="check-submitted">  {msg} </p>
                         </label>
                     </div> 
                    

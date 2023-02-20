@@ -57,7 +57,7 @@ const Formemail = () => {
                     <label id="sub-label">Subject:</label>
                       <input 
                        type="text"
-                       name="user_subject"
+                       name="subject"
                        className="form-control"
                        id="subject"
                        placeholder="Subject"
@@ -65,7 +65,7 @@ const Formemail = () => {
                       />
                 </div>
                <div className="form-group">
-                <label>Description :</label>
+                <label  id="des-label">Description :</label>
                  <textarea 
                   className="form-control"
                   name="message"

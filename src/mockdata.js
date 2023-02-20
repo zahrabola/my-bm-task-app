@@ -69,7 +69,7 @@ export const weatherdata =
         "id": 8,
         "city": "York",
         "temp": "11°C",
-        "region": "Yorkshire ",
+        "region": "Yorkshire",
         "description": "Light rain",
         "category":"10°C or more",
         "date": "18.2.2023"
