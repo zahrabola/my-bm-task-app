@@ -76,12 +76,12 @@ describe('Dev task - DropDown and input filter test', () => {
 
 })
 
-////*cy.get('select')
-  /////.select(['456', '457'])
- // .invoke('val')
- // .should('deep.equal', ['456', '457'])
 
- 
- ///['South West, England', 'West Midlands, England','Scotland','London, England','North West, England','Wales','Yorkshire']
- //"South West, England","West Midlands, England","Scotland", "'London, England", "North West, England", "Wales","Yorkshire"
+/*Drop down text - Dev task - Dropdown and input filter test.
+Line 5: Visit the URL of the app.
+Line 9 to 15: Verify that the dropdown has a select box with "10°C or more" selected. If it does, then the code should return 10°C or more weather card element with the correct selected value. If it doesn't, then the code should return Less than 10°C weather card element options. The test should check if the new dropdown selected state, of the application is what is expected. 
+Line 19 to 33: Verify that the dropdown has a select box with values for South West, England, West Midlands, England, Scotland, London, England, North West, England, Wales and Yorkshire. The code will verify that the dropdown has the correct values (weather card element) for each of the regions.
+Line 36 to 38: Verify that the code will search (interact - type) for the word "Bath" in the query, and then click (enter button) for the results. The test check if new state of application is as expected.
+Between 40 to 75: .skip is used to only execute the current test (Bath).  
+ */
 

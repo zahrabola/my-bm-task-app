@@ -10,3 +10,7 @@ describe('Dev task - checkbox', () => {
         cy.get("#check-submitted").should("exist")
     })
 })
+/*Checkbox test - Dev task – checkbox
+Line 3: Visit the URL of the app.
+Line 6 to 10: Verifies that the checkbox is checked and is not disabled.
+ */
