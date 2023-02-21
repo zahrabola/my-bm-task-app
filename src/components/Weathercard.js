@@ -1,8 +1,8 @@
 
 const Weathercard = ({item}) => {
 return(
- <div className="col-lg-3 mb-4">
-    <div className="card">
+ <div className="col-lg-3 mb-4 ">
+    <div className="card bg-light border-light">
         <div className="card-body">
             <h5 className="card-title">
                 City: {item.city}

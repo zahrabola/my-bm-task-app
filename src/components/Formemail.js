@@ -4,9 +4,9 @@ yYsGDmsWg3mBTFNo4 - YOUR_PUBLIC_KEY
 
 */
 
-
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+
 
 const Formemail = () => {
   const [submitted, setSubmitted] = useState(false)
@@ -88,6 +88,8 @@ const Formemail = () => {
             {
               submitted ? <h5 id='submitted'> email sent successfull  </h5> : null
             }
+
+            <h6>Zahra Olanrewaju</h6>
    
           </div>
         </section>
